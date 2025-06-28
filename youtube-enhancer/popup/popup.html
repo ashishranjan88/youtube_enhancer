@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Enhancer</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <i class="fab fa-youtube"></i>
+        <h1>YouTube Enhancer</h1>
+      </div>
+      <div class="version">v1.0</div>
+    </header>
+
+    <div class="divider"></div>
+
+    <main>
+      <section class="feature-card">
+        <div class="feature-header">
+          <i class="fas fa-ad"></i>
+          <h3>Ad Blocker</h3>
+          <label class="switch">
+            <input type="checkbox" id="adBlockToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <p class="feature-desc">Block all video ads and banners</p>
+      </section>
+
+      <section class="feature-card">
+        <div class="feature-header">
+          <i class="fas fa-clipboard-list"></i>
+          <h3>Shorts Manager</h3>
+          <label class="switch">
+            <input type="checkbox" id="shortsToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <p class="feature-desc">Disable YouTube Shorts</p>
+      </section>
+
+      <section class="feature-card">
+        <div class="feature-header">
+          <i class="fas fa-comment-slash"></i>
+          <h3>Comment Filter</h3>
+          <label class="switch">
+            <input type="checkbox" id="commentFilterToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="filter-options" id="filterOptions">
+          <div class="input-group">
+            <label for="filterKeywords"><i class="fas fa-filter"></i> Filter Keywords</label>
+            <textarea id="filterKeywords" placeholder="spam, promo, follow..."></textarea>
+          </div>
+          <button id="saveKeywords" class="btn-save">
+            <i class="fas fa-save"></i> Save Filters
+          </button>
+        </div>
+      </section>
+
+      <!-- New Incognito Mode Section -->
+      <section class="feature-card">
+        <div class="feature-header">
+          <i class="fas fa-user-secret"></i>
+          <h3>Incognito Mode</h3>
+          <label class="switch">
+            <input type="checkbox" id="incognitoToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+        <p class="feature-desc">Enable private browsing features</p>
+        <div class="incognito-options" id="incognitoOptions">
+          <div class="input-group">
+            <label>
+              <input type="checkbox" id="disableHistory"> Disable watch history
+            </label>
+          </div>
+          <div class="input-group">
+            <label>
+              <input type="checkbox" id="disableTracking"> Disable tracking
+            </label>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="divider"></div>
+
+    <footer>
+      <button id="settingsBtn" class="btn-icon">
+        <i class="fas fa-cog"></i> Settings
+      </button>
+      <button id="feedbackBtn" class="btn-icon">
+        <i class="fas fa-envelope"></i> Feedback
+      </button>
+    </footer>
+  </div>
+
+  <!-- Feedback Modal (hidden by default) -->
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2><i class="fas fa-envelope"></i> Send Feedback</h2>
+      <form id="feedbackForm">
+        <div class="input-group">
+          <label for="feedbackEmail">ranjanashish8739@gmail.com:</label>
+          <input type="email" id="feedbackEmail" placeholder="email@example.com">
+        </div>
+        <div class="input-group">
+          <label for="feedbackMessage">Message:</label>
+          <textarea id="feedbackMessage" rows="5" required placeholder="Your feedback or suggestions..."></textarea>
+        </div>
+        <div class="input-group">
+          <label>
+            <input type="checkbox" id="includeSystemInfo"> Include system information (browser version, extension version)
+          </label>
+        </div>
+        <button type="submit" class="btn-send">
+          <i class="fas fa-paper-plane"></i> Send Feedback
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
